@@ -58,10 +58,35 @@ var incrementLastArrayElement = function(_array) {
     newArray = _array.slice(0);
     var lastNumber = newArray.pop();
     newArray.push(lastNumber + 1);
-    return newArray;
     // Don't delete this line!
     return newArray;
 };
 
 // Did your code work? The line below will tell you!
 console.log(incrementLastArrayElement(sampleArray));
+
+var name = "AlbERt EINstEiN";
+
+function nameChanger(oldName) {
+    var finalName = oldName;
+    // Your code goes here!
+    var splitedName = oldName.split(' ');
+    var firstName = splitedName[0].charAt(0).toUpperCase() + splitedName[0].slice(1).toLowerCase();
+    var secondName = splitedName[1].toUpperCase();
+    finalName = firstName + " " + secondName;
+    // Don't delete this line!
+    return finalName;
+};
+
+function nameChangerV2(oldName) {
+    var finalName = oldName;
+    var names = oldName.split(" ");
+    names[1] = names[1].toUpperCase();
+    names[0] = names[0].slice(0,1).toUpperCase() + names[0].slice(1).toLowerCase();
+    finalName = names.join(" ");
+    return finalName;
+}
+
+// Did your code work? The line below will tell you!
+console.log(nameChanger(name));
+console.log(nameChangerV2(name));
